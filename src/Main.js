@@ -9,15 +9,20 @@ import {
 
 class Main extends Component {
   render() {
+    const { userName, userGender, userPhone, userAddress } = this.props;
     return (
       <View style={Styles.classContainer}>
+        <Text style={Styles.text}>testing semua inputan field revisi</Text>
         <View style={Styles.containerPerSection}>
           <View style={Styles.textContainer}>
             <Text style={Styles.text}>Name</Text>
           </View>
 
-          <TouchableOpacity style={Styles.inputContainer}>
-            <Text style={Styles.inputResult}>Name</Text>
+          <TouchableOpacity
+            style={Styles.inputContainer}
+            onPress={() => this.props.navigateToInputFormName()}
+          >
+            <Text style={Styles.inputResult}>{userName}</Text>
           </TouchableOpacity>
         </View>
 
@@ -26,8 +31,11 @@ class Main extends Component {
             <Text style={Styles.text}>Gender</Text>
           </View>
 
-          <TouchableOpacity style={Styles.inputContainer}>
-            <Text style={Styles.inputResult}>Gender</Text>
+          <TouchableOpacity
+            style={Styles.inputContainer}
+            onPress={() => this.props.navigateToInputFormGender()}
+          >
+            <Text style={Styles.inputResult}>{userGender}</Text>
           </TouchableOpacity>
         </View>
 
@@ -36,8 +44,11 @@ class Main extends Component {
             <Text style={Styles.text}>Phone</Text>
           </View>
 
-          <TouchableOpacity style={Styles.inputContainer}>
-            <Text style={Styles.inputResult}>Phone</Text>
+          <TouchableOpacity
+            style={Styles.inputContainer}
+            onPress={() => this.props.navigateToInputFormPhone()}
+          >
+            <Text style={Styles.inputResult}>{userPhone}</Text>
           </TouchableOpacity>
         </View>
 
@@ -45,8 +56,11 @@ class Main extends Component {
           <View style={Styles.textContainer}>
             <Text style={Styles.text}>Address</Text>
           </View>
-          <TouchableOpacity style={Styles.inputContainer}>
-            <Text style={Styles.inputResult}>Address</Text>
+          <TouchableOpacity
+            style={Styles.inputContainer}
+            onPress={() => this.props.navigateToInputFormAddress()}
+          >
+            <Text style={Styles.inputResult}>{userAddress}</Text>
           </TouchableOpacity>
         </View>
 
@@ -54,9 +68,8 @@ class Main extends Component {
           <Text style={Styles.textButton}>Submit</Text>
         </TouchableOpacity>
       </View>
-    )
+    );
   }
-  
 }
 
 const Styles = StyleSheet.create({
@@ -82,5 +95,4 @@ const Styles = StyleSheet.create({
   textButton: { textAlign: "center", margin: 10 }
 });
 
-export default Main
-
+export default Main;
